@@ -1,0 +1,103 @@
+1.什么是自动化
+	没有人或者人参与比较少情况下，按照人的要求进行自动检测
+	信息处理、分析判断、操作控制、实现预期目标的过程
+2.什么是自动化测试
+	包含单元测试、接口测试、UI测试，主要是编写代码、脚本，让软件自动运行
+	发现缺陷，代替部分手工测试
+3.自动化测试发展趋势
+	测试在更多浏览器中进行，越来越多的测试人员使用最新版本
+		selenium 2.x 默认自带firefox浏览器进行自动化测试
+		selenium 3.x 所有浏览器的驱动都要自己下载
+		常见浏览器
+			ie         
+			chrome
+			firefox
+			safari
+			opera
+	真实设备和模拟器混合成为移动端测试标准
+		安卓模拟器
+			夜神
+	自动化测试价值明显
+4.自动化测试的优缺点
+	自动化测试优点
+		回归测试更方便(程序修改更频繁、效果比较明显)
+		运行比较繁琐的测试(较少的时间运行较多的测试)
+		执行手工测试困难或者无法进行的测试(大用户量，不能有足够的人员测试，可以通过自动化模拟多个用户)
+		更好的利用资源
+		测试具有一致性和重复性
+	自动化测试的缺点
+		不能替代手工测试
+		手工测试比自动化测试发现的缺陷更多，自动化测试不容易发现新的bug
+		对测试质量的依赖性比较大:自动化测试脚本正常运行前，需要先经过功能测试
+		自动化测试可能会制约某些软件
+5.主流测试框架
+	QTP/UFT
+	selenium
+	robot framework
+6.selenium特点
+	开源、免费
+	多浏览器支持：  firefox   Chrome   IE   Safari
+	多平台支持  :   linux     windows   mac
+	多语言支持  :   java  python  ruby  php  c#   javascript
+	对web有良好的支持
+	简单(API简单)，灵活(开发语言驱动)
+	支持分布式测试用例执行
+7.自动化测试环境的安装
+	a.安装python
+	b.安装pycharm
+	c.配置pycharm
+	d.安装selenium模块
+	e.安装浏览器的对应驱动
+8.selenium的常见的元素定位方法
+	a.查看页面元素信息
+		浏览器的F12功能(开发者工具)，点击元素右键检查，查看对应元素前端代码
+	b.自动化测试基础代码
+		#coding=utf-8
+		#设置字符集为utf-8
+		from selenium import webdriver
+		#从selenium库中导入webdriver驱动程序
+		br=webdriver.Chrome()
+		#定义可以操控的浏览器 chrome
+		br.get("https://www.baidu.com")
+		#浏览器打开网页的地址
+	c.id定位
+		通过id的值对元素进行定位
+			find_element_by_id("kw") 
+			搜索页面中id的值是kw的元素
+		补充:对元素的常见操作
+			click()  点击
+			clear()  清空
+			send_keys() 发送内容
+	d.name定位
+		通过name的值对元素进行定位
+			find_element_by_name("wd")
+			搜索页面中name的值是wd的元素
+	e.class定位
+		通过类名class的值对元素进行定位
+			find_element_by_class_name("s_ipt")
+			搜索页面中class的值是s_ipt的元素
+	f.tag定位
+		html是通过tag来定义功能的，input是输入，table是表格，等等
+		工作中使用比较少，很难通过tag去区分不同元素
+			find_element_by_tag_name("input")
+			搜索页面中input标签的元素
+	g.通过link定位
+		专门定位文本链接，比如百度新闻(a标签)
+			find_element_by_link_text("hao123")
+			搜索a标签中内容为hao123的标签
+	h.通过partial link定位
+		超文本链接很长，全部输入的话浪费资源，这种方式叫做模糊匹配
+			find_element_by_partial_link_text("闻")
+			搜索a标签中包含闻的标签
+	i.xpath定位
+		理想状态下，页面中都会有id、name、class,但是实际情况并不是，属性相同，刷新页面值都会变化
+			find_element_by_xpath("//*[@id='kw']")
+			搜索页面中id的值是kw的元素
+	j.css定位
+		相对于xpath简洁、速度快
+			find_element_by_css_selector("#kw")
+			#在css选择器中表示id选择器
+			#kw就代表id的值是kw的元素
+			
+
+
