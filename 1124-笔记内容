@@ -78,6 +78,40 @@
 			or   满足一个条件即可
 			$x("//a[@class='mnav c-font-normal c-color-t' and @href='https://www.hao123.com']")
 
+5.ecshop项目部署
+		链接：https://pan.baidu.com/s/1aUxSoyzHvbgPLBEBSsSqfQ 
+		提取码：rv4h 
+	a.下载phpstudy和ecshop压缩包
+	b.安装phpstudy(傻瓜安装)
+		测试apache(web服务器)
+			查看进程
+				win+r--cmd(打开命令提示符)--tasklist | find "httpd"
+				tasklist 当前系统运行的所有进程
+				|        管道，前面的输出作为后面的输入
+				find     搜索
+				httpd    apache的主服务
+			查看端口
+				win+r--cmd--netstat -an | find "80"
+				netstat -an 当前系统开放的所有端口
+			0.0.0.0  任意IP
+			127.0.0.1==localhost 电脑本机
+		测试mysql(数据库服务器)	
+			查看进程
+				win+r--cmd--tasklist | find "mysqld"
+			查看端口
+				win+r--cmd--netstat -an | find "3306"
+	c.解压ecshop压缩包
+	d.复制解压好的文件夹到phpstudy的安装路径下的WWW文件夹中
+	e.浏览器中输入127.0.0.1/ecshop1按照提示安装
+		配置系统中注意:
+			数据库主机 localhost
+			端口号     3306
+			用户名     root
+			密码       root
+			数据库名    test
+
+
+
 
 
 
