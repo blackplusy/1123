@@ -44,6 +44,42 @@
 				$("[class$='pt']")
 			^代表以..开头
 			$代表以..结尾
+4.xpath定位
+	xpath定位语法参考:https://www.w3school.com.cn/xpath/index.asp
+	针对于xml的路径的语言，通过元素的路径来找到这个元素
+	1.工具
+		F12
+		firefox firebug
+	2.用法
+		/  绝对路径，从根节点选取元素
+		// 相对路径，所有子节点中搜索对应元素
+		@  选取属性
+		.  当前节点
+		.. 当前节点的父节点
+		注意:通过浏览器的F12的console进行调试  $x()
+		1.xpath支持id，class，name定位
+			a.id定位
+				$x("//*[@id='kw']")
+				$x("//input[@id='kw']")
+			b.class定位
+				$x("//*[@class='s_ipt']")
+			c.name定位
+				$x("//*[@name='wd']")
+		2.如果没有id,class,name属性，xpath支持其他属性定位
+			$x("//*[@autocomplete='off']")
+		3.通过层级关系定位元素
+			3.1 通过相对路径定位元素
+				$x("//a")
+				$x("//*[@class='mnav c-font-normal c-color-t'][2]")
+			3.2 通过绝对路径定位元素
+				$x("/html/body/div[1]/div[1]")
+		4.xpath运算符
+			and  同时满足条件
+			or   满足一个条件即可
+			$x("//a[@class='mnav c-font-normal c-color-t' and @href='https://www.hao123.com']")
+
+
+
 
 
 
